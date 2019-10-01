@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use App\Note;
 use App\Image;
 use App\Http\Requests\createNoteRequest;
-use App\Http\Requests\UploadImportModelRequest;
+use App\Http\Requests\importNoteRequest;
 
 
 
@@ -80,7 +80,7 @@ class NotesController extends Controller
 
     public function edit($id)
     {
-        $notes = Note::find($id);
+        $notes = Note::findorfail($id);
 
         return view('notes.edit', ['note' => $notes]);
     }
@@ -88,7 +88,7 @@ class NotesController extends Controller
     public function update(createNoteRequest $request, $id)
     {        
 
-        $notes = Note::find($id);
+        $notes = Note::findorfail($id);
 
         $notes->fill($request->all());
         $notes->save();
@@ -128,7 +128,7 @@ class NotesController extends Controller
 
     public function destroy($id)
     {
-        Note::find($id)->delete();
+        Note::findorfail($id)->delete();
 
         // Redirect to index
         return redirect()->route('notes.index')
@@ -137,7 +137,7 @@ class NotesController extends Controller
 
     public function destroyImage($id)
     {        
-        $imageId = Image::find($id)->image; //search image from database
+        $imageId = Image::findorfail($id)->image; //search image from database
         Image::where('id', $id)->delete(); //delete image from database 
 
         $path = public_path().'/images/'.$imageId; //replace with folder path
@@ -150,7 +150,7 @@ class NotesController extends Controller
         return view('notes.export');
     }
 
-    public function get_export()
+    public function getexport()
     {        
         $table = Note::all();
         if ($table->count() > 0) {
@@ -183,7 +183,7 @@ class NotesController extends Controller
         return view('notes.import');
     }    
 
-    public function get_import(UploadImportModelRequest $request)
+    public function get_import(importNoteRequest $request)
     {
         
         $file = $request->file('import_file');

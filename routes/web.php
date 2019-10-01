@@ -14,7 +14,7 @@ Route::delete('image/{id}/destroy', 'NotesController@destroyImage')->name('image
 
 Route::get('notes/export','NotesController@export')->name('notes.export');
 
-Route::get('notes/get_export','NotesController@get_export')->name('notes.get_export');
+Route::get('notes/getexport','NotesController@getexport')->name('notes.getexport');
 
 Route::get('notes/import','NotesController@import')->name('notes.import');
 
