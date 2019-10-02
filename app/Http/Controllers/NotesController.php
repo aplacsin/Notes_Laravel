@@ -40,8 +40,8 @@ class NotesController extends Controller
        $notes->save();
        
        
-       $noteId =$notes->id; 
-       $data = [];       
+       $noteId =$notes->id;
+       $data = [];
     
        $imagename =[];
        $i = 0;
@@ -67,16 +67,21 @@ class NotesController extends Controller
         }         
 
         $images = new Image();
-        $images->insert($data);
-         
-        
+        $images->insert($data);        
         $images->save();
 
 
        // Redirect to index
        return redirect()->route('notes.index')
                         ->with('success','• Заметка успешно создана.');
-    }    
+    }  
+    
+    public function show($id)
+    {
+        $notes = Note::findorfail($id);
+        
+        return view('notes.show', ['note' => $notes]);
+    }
 
     public function edit($id)
     {

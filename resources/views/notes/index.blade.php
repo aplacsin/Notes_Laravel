@@ -69,6 +69,9 @@
                         </td>
                         <td>
                             <div class="actions">
+                            <a href="{{ route('notes.show', $note->id) }}" class="btn btn-primary btn-edit">
+                                    Посмотреть
+                                </a>
                                 <a href="{{ route('notes.edit', $note->id) }}" class="btn btn-warning btn-edit">
                                     Редактировать
                                 </a>

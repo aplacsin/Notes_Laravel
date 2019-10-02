@@ -21,7 +21,7 @@ h3 {
 
 .wrapper-image-main {
     width: 150px;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
 }
 
 .image-main img {
@@ -29,12 +29,12 @@ h3 {
 }
 
 .wrapper-content {
-    width: 300px;    
+    width: 300px;
     word-wrap: break-word;
 }
 
 .wrapper-title {
-    width: 100px;    
+    width: 100px;
     word-wrap: break-word;
 }
 
@@ -66,7 +66,7 @@ h3 {
 }
 
 .warpper-image-edit {
-    width: 300px;    
+    width: 300px;
     margin-right: 10px;
 }
 
@@ -119,6 +119,53 @@ h3 {
 }
 
 .add-create-field,
-.add-edit-field  {
+.add-edit-field {
     margin-bottom: 10px;
+}
+
+/* Show Page */
+
+
+.title-show {
+    text-align: center;
+}
+
+.wrapper-image-show {
+    width: 500px;
+    margin-right: 10px;
+}
+
+.image-show img {
+    width: 100%;
+}
+
+#largeImg {
+    border: solid 1px #ccc;
+    width: 100%;
+    padding: 5px;
+    display: none;
+}
+
+.wrapper-gallery {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.title-gallery {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#thumbs a {
+    border: solid 1px #ccc;
+    width: 100%;
+    padding: 3px;
+    margin: 2px;
+    float: left;
+}
+
+#thumbs a:hover {
+    border-color: #FF9900;
 }

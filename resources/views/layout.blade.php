@@ -27,6 +27,7 @@
     <script src="{{asset('js/OtherComponents/jquery-3.4.1.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>    
     <script src="{{asset('js/edit_images.js')}}"></script>
+    <script src="{{asset('js/image_gallery.js')}}"></script>
 </body>
 
 </html>
